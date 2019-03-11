@@ -24,11 +24,13 @@ export default class Image extends Component {
       ...elementProps
     } = otherProps;
     const combinedClassName = unionClassNames(theme.image, className);
-    const { src } = contentState.getEntity(block.getEntityAt(0)).getData();
+    const { src, width, height } = contentState.getEntity(block.getEntityAt(0)).getData();
     return (
       <img
         {...elementProps}
         src={src}
+        width={width}
+        height={height}
         role="presentation"
         className={combinedClassName}
       />
